@@ -57,9 +57,14 @@
         </form>
     </div>
     <script>
-        document.getElementById('password-reset-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting
-            window.location.href = 'training.html'; // Redirect to a training page
+       document.getElementById('password-reset-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+    gtag('event', 'form_submission', {
+        'event_category': 'engagement',
+        'event_label': 'Password Reset Form'
+    });
+    window.location.href = 'training.html'; // Redirect to the training page
+});
         });
     </script>
 </body>
